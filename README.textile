@@ -1,6 +1,6 @@
 h1. In-Field Labels jQuery Plugin
 
-*Version:* 0.1.3
+*Version:* 0.1.5
 
 *License:* "Same as jQuery (Dual GPL + MIT)":http://docs.jquery.com/License
 
@@ -22,7 +22,7 @@ h2. Known Issues
 
 <del>Browser Auto-Complete can cause problems in hiding the labels. Less of an issue for Login Boxes, but much more of an issue with comment forms.</del> (Fixed thanks to @zawaideh!)
 
-There may still me a few cases where you will still have an issue with overlapping labels and autocompleted fields. In these cases, you can turn on polling by passing `pollDuration` with a number larger than 0. If you want to turn polling on globally for your usage, change the default: `$.inFieldLabels.defaultOptions.pollDuration = 300`. (Thanks to @fakeartist for the basis for this feature!)
+There may still me a few cases where you will still have an issue with overlapping labels and autocompleted fields. In these cases, you can turn on polling by passing `pollDuration` with a number larger than 0. If you want to turn polling on globally for your usage, change the default: `$.InFieldLabels.defaultOptions.pollDuration = 300`. (Thanks to @fakeartist for the basis for this feature!)
 
 h2. Use
 
@@ -74,6 +74,8 @@ When an animation occurs, it uses this setting to determine duration. Defaults t
 *<code>pollDuration:</code> Time in milliseconds or `0` to disable polling*
 If set to a number greater than zero, the code will check the value of the field at the specified interval until content is detected in this field. Once content is detected or entered, the polling stops for this field.
 
+*<code>className:</code> A class to be applied to each label that is enhanced. Set to `false` or `""` and a class will not be set. Defaults to <code>false</code>
+
 *<code>enabledInputTypes:</code> Array of input types to allow*
 It is not normally desireable for <code>checkbox</code> and <code>radio</code> input types to have their labels fade out. This allows you to control which input types are allowed. Defaults to: <code>[ "text", "search", "tel", "url", "email", "password", "textarea" ]</code>
 
@@ -88,6 +90,15 @@ Note that the implementation just clears the label blindly. No check is made for
 *  The worst case senario would be the pasting of a single space to the text field. There is no way to copy/cut an empty string so all a user can do is paste a single space which should remove the label anyway.
 
 h2. Changelog
+
+*Version 0.1.5*
+
+* Added `bower.json` _Special thanks to "Stephen Way (@stephenway)"(https://github.com/stephenway) for contributing this file._
+* Fixed issue where label could still be selected even with opacity set to 0.0. _Special thanks to "Eric Kelly (@clearbucketLabs)":https://github.com/clearbucketLabs for contributing this fix._
+
+*Version 0.1.4*
+
+* Add support for a class name to be applied to enhanced label elements. Off by default to not break existing implementations should a existing class name be in use. _Special thanks to "Benjamin Leveritt (@captainreuben)":https://github.com/captainreuben for contributing this addition._
 
 *Version 0.1.3*
 

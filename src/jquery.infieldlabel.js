@@ -4,7 +4,7 @@
     // To avoid scope issues, use 'base' instead of 'this'
     // to reference this class from internal events and functions.
     var base = this;
-  
+
     // Access to jQuery and DOM versions of each element
     base.$label = $(label);
     base.label  = label;
@@ -20,6 +20,11 @@
 
       // Merge supplied options with default options
       base.options = $.extend({}, $.InFieldLabels.defaultOptions, options);
+
+      // Add provided class name to the label, if set
+      if ( base.options.className ) {
+        base.$label.addClass(base.options.className);
+      }
 
       // Check if the field is already filled in 
       // add a short delay to handle autocomplete
@@ -43,7 +48,7 @@
         base.hideOnChange(e);
       }).bind('paste', function () {
         // Since you can not paste an empty string we can assume
-        // that the fieldis not empty and the label can be cleared.
+        // that the field is not empty and the label can be cleared.
         base.setOpacity(0.0);
       }).change(function () {
         base.checkForEmpty();
@@ -74,10 +79,14 @@
       }
     };
 
-    base.setOpacity = function (opacity) {
-      base.$label.stop().animate({ opacity: opacity }, base.options.fadeDuration);
-      base.showing = (opacity > 0.0);
-    };
+     base.setOpacity = function (opacity) {
+            base.$label.stop().animate({ opacity: opacity }, base.options.fadeDuration, function () {
+                if (opacity === 0.0) {
+                    base.$label.hide();
+                }
+            });
+            base.showing = (opacity > 0.0);
+        };
 
     // Checks for empty as a fail safe
     // set blur to true when passing from
@@ -108,7 +117,7 @@
           (e.keyCode === 16) || // Skip Shift
           (e.keyCode === 9) // Skip Tab
         ) {
-        return; 
+        return;
       }
 
       if (base.showing) {
@@ -128,7 +137,8 @@
     fadeOpacity: 0.5, // Once a field has focus, how transparent should the label be
     fadeDuration: 300, // How long should it take to animate from 1.0 opacity to the fadeOpacity
     pollDuration: 0, // If set to a number greater than zero, this will poll until content is detected in a field
-    enabledInputTypes: [ "text", "search", "tel", "url", "email", "password", "number", "textarea" ]
+    enabledInputTypes: [ "text", "search", "tel", "url", "email", "password", "number", "textarea" ],
+    className: false // Class assigned to enhanced labels
   };
 
 
@@ -155,7 +165,7 @@
 
       if ( restrict_type === -1 && field.nodeName !== "TEXTAREA" ) {
         return; // Again, nothing to attach
-      } 
+      }
 
       // Only create object for matched input types and textarea
       (new $.InFieldLabels(this, field, options));

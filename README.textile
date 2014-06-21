@@ -24,6 +24,13 @@ h2. Known Issues
 
 There may still me a few cases where you will still have an issue with overlapping labels and autocompleted fields. In these cases, you can turn on polling by passing `pollDuration` with a number larger than 0. If you want to turn polling on globally for your usage, change the default: `$.InFieldLabels.defaultOptions.pollDuration = 300`. (Thanks to @fakeartist for the basis for this feature!)
 
+h2. Considering alternatives
+
+See http://css-tricks.com/float-labels-css/ for a modern CSS-only approach.
+
+Also be sure to read http://bradfrostweb.com/blog/post/float-label-pattern/ and the 'problems with this' article referenced from there: http://baymard.com/blog/mobile-forms-avoid-inline-labels
+
+  
 h2. Use
 
 h3. HTML

@@ -26,18 +26,22 @@
 	<h1>In-Field Labels jQuery Plugin</h1>
 	<div id="header">
 		<p><strong>License:</strong> <a href="http://docs.jquery.com/License">Same as jQuery (Dual GPL + MIT)</a></p>
-			<p><strong>Author:</strong> <a href="http://pixelgraphics.us/company/">Doug Neiner</a></p>
-			<p><strong>Download:</strong> <a href="http://fuelyourcoding.com/scripts/infield/InFieldLabels.zip">InFieldLabels.zip</a></p>
-			<p><strong>Source:</strong> <a href="http://github.com/dcneiner/In-Field-Labels-jQuery-Plugin/">GitHub</a></p>
-			<p><strong>Size:</strong> Under 1KB Minified and gzipped</p>
-			<p><strong>Overview:</strong><br />
-			This is a simple plugin that turns properly formatted HTML forms into
-			forms with in-field label support. Labels fade when the field is focussed and disappear
-			when text entry begins. Clearing a field and leaving brings back the label.</p>
-			<p><strong>Browser Support:</strong><br />IE6+, WebKit Browsers (Safari, Chrome), Firefox 2+ <small>* IE6 requires a background-color be set on the label to match the background of the field.</small></p>
-			<p><strong>Known Issues:</strong><br />
-			<del>Browser Auto-Complete can cause problems in hiding the labels. Less of an issue for Login Boxes, but much more of an issue with comment forms.</del> (Fixed thanks to @zawaideh!)</p>
-			<p>There may still me a few cases where you will still have an issue with overlapping labels and autocompleted fields. In these cases, you can turn on polling by passing <tt>pollDuration</tt> with a number larger than 0. If you want to turn polling on globally for your usage, change the default: <tt>$.inFieldLabels.defaultOptions.pollDuration = 300</tt>. (Thanks to @fakeartist for the basis for this feature!)</p>
+		<p><strong>Author:</strong> <a href="http://pixelgraphics.us/company/">Doug Neiner</a></p>
+		<p><strong>Download:</strong> <a href="http://fuelyourcoding.com/scripts/infield/InFieldLabels.zip">InFieldLabels.zip</a></p>
+		<p><strong>Source:</strong> <a href="http://github.com/dcneiner/In-Field-Labels-jQuery-Plugin/">GitHub</a></p>
+		<p><strong>Size:</strong> Under 1KB Minified and gzipped</p>
+		<p><strong>Overview:</strong><br />
+		This is a simple plugin that turns properly formatted HTML forms into
+		forms with in-field label support. Labels fade when the field is focussed and disappear
+		when text entry begins. Clearing a field and leaving brings back the label.</p>
+		<p><strong>Browser Support:</strong><br />IE6+, WebKit Browsers (Safari, Chrome), Firefox 2+ <small>* IE6 requires a background-color be set on the label to match the background of the field.</small></p>
+		<p><strong>Known Issues:</strong><br />
+		<del>Browser Auto-Complete can cause problems in hiding the labels. Less of an issue for Login Boxes, but much more of an issue with comment forms.</del> (Fixed thanks to @zawaideh!)</p>
+		<p>There may still me a few cases where you will still have an issue with overlapping labels and autocompleted fields. In these cases, you can turn on polling by passing <tt>pollDuration</tt> with a number larger than 0. If you want to turn polling on globally for your usage, change the default: <tt>$.inFieldLabels.defaultOptions.pollDuration = 300</tt>. (Thanks to @fakeartist for the basis for this feature!)</p>
+		<hr/>
+		<h2>Considering alternatives</h2>
+		<p>See <a href="http://css-tricks.com/float-labels-css/">http://css-tricks.com/float-labels-css/</a> for a modern CSS-only approach.</p>
+		<p>Also be sure to read <a href="http://bradfrostweb.com/blog/post/float-label-pattern/">http://bradfrostweb.com/blog/post/float-label-pattern/</a> and the 'problems with this' article referenced from there: <a href="http://baymard.com/blog/mobile-forms-avoid-inline-labels">http://baymard.com/blog/mobile-forms-avoid-inline-labels</a></p>
 		</p>
 	</div>
 	<div class="body"><h2>Samples</h2></div>
